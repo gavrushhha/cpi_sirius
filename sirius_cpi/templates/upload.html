@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload File</title>
+    <title>Загрузка файла</title>
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Upload Excel File</h1>
+        <h1>Загрузка файла для подсчёта</h1>
+        <p class="department-info">Отдел: {{ department }}</p>
         <form action="/process-file/" method="post" enctype="multipart/form-data">
-            <input type="file" name="file" accept=".xlsx" required>
-            <button type="submit">Upload</button>
+            <input type="file" name="file" required>
+            <input type="hidden" name="department" value="{{ department }}">
+            <button type="submit">Отправить</button>
         </form>
     </div>
 </body>
